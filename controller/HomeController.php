@@ -1,22 +1,19 @@
 <?php
+    require 'model/User.php';
     class HomeController {
-        public $view = 'view/home.php';
+        public $view;
+        private $users;
         public $data;
-        function setData(){
-            $data = [
-                'client'=>[
-                                ['name'=>'Tuan 1','birthday' => '21/04/2000'],
-                                ['name' => 'Tuan 2','birthday' => '21/03/2000']
-                ],
-                'form'=>[
-                    ['id'=> '1','name' => 'Apply for job','state' => 'waiting'],
-                    ['id'=> '2','name' => 'Ask about salary','state' => 'complete' ]
-                ]
-                        ];
+        function __construct(){
+            $this->users = new User();
+        }
+        function pullUser(){
+            $user = $this->users->getUser(1);
+            $this->view = 'view/home.php';
+            $data = ['user' => $user];
             $this->data = json_encode($data);
-            echo $this->data;
         }
 
     }
     $controller = new HomeController();
-    $controller->setData();
+    $controller->pullUser();
