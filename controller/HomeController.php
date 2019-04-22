@@ -8,7 +8,8 @@
             $this->users = new User();
         }
         function pullUser(){
-            $user = $this->users->getUser(1);
+            $user = '';
+             if(isset($_GET['id'])) $user  =   $this->users->getUser($_GET['id']);
             $this->view = 'view/home.php';
             $data = ['user' => $user];
             $this->data = json_encode($data);
@@ -16,4 +17,6 @@
 
     }
     $controller = new HomeController();
-    $controller->pullUser();
+    
+     $controller->pullUser();
+
