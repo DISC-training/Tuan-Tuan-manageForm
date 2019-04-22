@@ -1,5 +1,5 @@
 <?php
-    require 'Controller/HomeController';
+    require 'Controller/HomeController.php';
     $controller = new HomeController();
 ?>
 <!DOCTYPE html>

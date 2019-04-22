@@ -1,4 +1,4 @@
 <?php
-    class HomeCotroller {
+    class HomeController {
         public $view = 'view/home.php';
     }
