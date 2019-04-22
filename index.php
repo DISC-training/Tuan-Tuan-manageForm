@@ -1,6 +1,5 @@
 <?php
     require 'Controller/HomeController.php';
-    $controller = new HomeController();
 ?>
 <!DOCTYPE html>
 <html lang="en">
